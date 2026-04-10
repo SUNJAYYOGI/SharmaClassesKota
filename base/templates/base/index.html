@@ -1,155 +1,369 @@
+{% load static %}
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Sharma Classes | Shape Your Future</title>
+    <title>Sharma Classes, Kota(Naya Gaon, Rojdi) | Premier Coaching Institute in Kota</title>
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
+    
+    <meta name="title" content="Sharma Classes, Kota(Naya Gaon, Rojdi) | Premier Coaching Institute in Kota">
+    <meta name="description" content="Join Sharma Classes in Kota (Naya Gaon, Rojdi) for expert guidance in Foundation courses(8th, 10th, 12th classes). Achieve your dreams with Kota's finest faculty.">
+    <meta name="keywords" content="Sharma Classes, Sharma Classes Kota, best coaching in Kota, 12th coaching Kota, 10th coaching Kota, 8th coaching Kota, board coaching Kota. NEET coaching Kota, foundation classes Kota, IIT JEE preparation, medical entrance coaching, Rojdi coaching institute, Naya Gaon Kota coaching, top institute in Kota, 8th to 12th coaching, naresh sharma, chanchal sharma, kundan sharma, arts coaching in nayan gaon rojari/rojadi kota, science coaching in rojari/rojadi kota, best coaching in nayan gaon rojari/rojadi kota">
+    <meta name="author" content="Sharma Classes, Naresh Sharma, Chanchal Sharma, Kundan sharma">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sharmaclasses.com/">
+    <meta property="og:title" content="Sharma Classes, Kota(Naya Gaon, Rojdi) | Premier Coaching Institute in Kota">
+    <meta property="og:description" content="Expert guidance in JEE, NEET, and Foundation. Shape your future with Sharma Classes in Naya Gaon, Kota.">
+    <meta property="og:image" content="{% static 'images/ogimage.jpg' %}">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.sharmaclasses.com/">
+    <meta property="twitter:title" content="Sharma Classes, Kota(Naya Gaon, Rojdi) | Premier Coaching Institute in Kota">
+    <meta property="twitter:description" content="Join Sharma Classes in Kota (Naya Gaon, Rojdi) for expert guidance in Foundation courses(8th, 10th, 12th classes). Achieve your dreams with Kota's finest faculty.">
+    <meta name="keywords" content="Sharma Classes, Sharma Classes Kota, best coaching in Kota, 12th coaching Kota, 10th coaching Kota, 8th coaching Kota, board coaching Kota. NEET coaching Kota, foundation classes Kota, IIT JEE preparation, medical entrance coaching, Rojdi coaching institute, Naya Gaon Kota coaching, top institute in Kota, 8th to 12th coaching, naresh sharma, chanchal sharma, kundan sharma, arts coaching in nayan gaon rojari/rojadi kota, science coaching in rojari/rojadi kota, best coaching in nayan gaon rojari/rojadi kota">
+    <meta property="twitter:image" content="{% static 'images/ogimage.jpg' %}">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Sharma Classes, Kota",
+      "image": "https://www.sharmaclasses.com/static/images/ogimage.jpg",
+      "description": "Premier Coaching Institute in Kota for 1 to 12th classes, and Foundation or Board.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4R83+4JV, Rojhari Main Rd, Naya Gaon, Rojdi",
+        "addressLocality": "Kota",
+        "addressRegion": "Rajasthan",
+        "postalCode": "324010",
+        "addressCountry": "IN"
+      },
+      "telephone": "+91-9929550407",
+      "url": "https://www.sharmaclasses.com"
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
-                    colors: {
-                        "primary-container": "#0a2540",
-                        "secondary": "#a04100",
+                    "colors": {
+                        "surface-container-highest": "#e1e3e4",
+                        "outline": "#4a4b53",
+                        "secondary-fixed": "#adafbe",
+                        "background": "#ffffff", 
+                        "on-primary-fixed-variant": "#264191",
+                        "secondary-fixed-dim": "#bdc5eb",
+                        "primary": "#00236f", 
+                        "secondary": "#dc2626", 
+                        "surface-container-high": "#e7e8e9",
+                        "on-error": "#ffffff",
                         "surface-container-lowest": "#ffffff",
-                        "primary": "#000f22",
-                        "on-surface-variant": "#43474d",
+                        "on-primary-fixed": "#00164e",
+                        "primary-fixed": "#dce1ff",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d9dadb",
+                        "on-secondary-fixed-variant": "#3d4565",
+                        "surface-tint": "#4059aa",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-variant": "#e1e3e4",
+                        "inverse-surface": "#2e3132",
+                        "on-background": "#191c1d",
+                        "on-primary-container": "#90a8ff",
+                        "surface-container-low": "#f4f6fb", 
+                        "surface": "#ffffff",
+                        "on-surface-variant": "#444651",
+                        "outline-variant": "#c5c5d3",
+                        "primary-container": "#1e3a8a",
+                        "surface-container": "#edeeef",
+                        "on-surface": "#191c1d",
                     },
-                    fontFamily: {
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
                         "headline": ["Inter"],
                         "body": ["Inter"],
+                        "label": ["Inter"]
                     },
+                    "animation": {
+                        "marquee": "marquee 25s linear infinite",
+                    },
+                    "keyframes": {
+                        "marquee": {
+                            "0%": { transform: "translateX(100%)" },
+                            "100%": { transform: "translateX(-100%)" }
+                        }
+                    }
                 },
             },
         }
     </script>
     <style>
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
-        .editorial-shadow { box-shadow: 0 20px 40px rgba(0, 15, 34, 0.06); }
-        .ghost-border { border-bottom: 1px solid rgba(196, 198, 206, 0.15); }
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #191c1d; overflow-x: hidden; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
-<body class="bg-[#f8f9fa] text-[#191c1d] font-body antialiased">
+<body class="selection:bg-primary-fixed selection:text-on-primary-fixed">
 
-    <div class="bg-primary-container text-white py-2.5 px-6 overflow-hidden relative z-[60]">
-        <div class="max-w-7xl mx-auto flex items-center justify-center gap-4">
-            <span class="text-[10px] uppercase tracking-[0.2em] font-bold bg-secondary px-2 py-0.5 rounded-sm">Alert</span>
-            <marquee class="text-sm font-medium tracking-wide">
-                {% for notice in notices %}
-                    {{ notice.title }} &nbsp; | &nbsp; 
-                {% empty %}
-                    Welcome to Sharma Classes! Admissions are open for new batches.
-                {% endfor %}
-            </marquee>
+    <div class="bg-red-600 py-2 overflow-hidden whitespace-nowrap border-b border-red-700 shadow-md">
+        <div class="flex items-center gap-8 animate-marquee text-white">
+            <span class="flex items-center text-red-600 bg-white px-3 py-1 rounded-sm text-[11px] font-bold tracking-widest uppercase">
+                <span class="material-symbols-outlined text-[14px] mr-2">campaign</span>
+                Latest Update
+            </span>
+            {% for notice in notices %}
+                <p class="text-white text-xs font-medium">{{ notice.title }} ({{ notice.date_posted|date:"d M Y" }})</p>
+                <span class="text-red-300">|</span>
+            {% empty %}
+                <p class="text-white text-xs font-medium">Welcome to Sharma Classes! Admissions are now open.</p>
+            {% endfor %}
         </div>
     </div>
 
-    <nav class="fixed top-10 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/10 shadow-sm">
-        <div class="flex justify-between items-center h-20 px-6 md:px-12 max-w-7xl mx-auto">
-            <div class="text-xl font-bold tracking-tight text-slate-900 font-headline">Sharma Classes</div>
-            <div class="hidden md:flex items-center gap-10">
-                <a class="text-orange-600 font-semibold border-b-2 border-orange-600 font-['Inter'] text-sm transition-all" href="#">Home</a>
-                <a class="text-slate-600 hover:text-slate-900 font-['Inter'] text-sm transition-all" href="#courses">Courses</a>
-                <a class="text-slate-600 hover:text-slate-900 font-['Inter'] text-sm transition-all" href="#enquiry">Contact</a>
+    <nav class="sticky top-0 w-full z-50 bg-white/90 backdrop-blur-xl shadow-sm font-['Inter'] font-medium tracking-tight border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter text-blue-900 flex items-center">
+                <img class="relative top-0 right-0 w-12 h-12 bg-primary/5 rounded-full pointer-events-none mr-3" src="{% static 'images/logo.jpeg' %}">
+                <span class="text-red-600">SHARMA </span><span class="text-primary ml-1">CLASSES</span>
             </div>
-            <a href="#enquiry" class="bg-secondary hover:bg-orange-800 text-white px-8 py-3 rounded-lg text-sm font-bold tracking-tight active:scale-95 transition-all duration-300 shadow-sm">
-                Enroll Now
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-primary font-bold border-b-2 border-primary transition-colors duration-200" href="#courses">Courses</a>
+                <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="#faculty">Faculty</a>
+                <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="#gallery">Gallery</a>
+                <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="#contact">Contact</a>
+            </div>
+            <a href="#contact" class="bg-red-600 text-white px-6 py-2.5 rounded-md font-bold text-sm tracking-wide hover:bg-red-700 active:scale-95 transition-all shadow-md inline-block">
+                Apply Now
             </a>
         </div>
     </nav>
 
-    <main>
-        <section class="relative min-h-[700px] flex items-center pt-32 pb-20 overflow-hidden bg-primary">
-            <div class="relative z-20 max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-8">
-                    <span class="text-secondary tracking-[0.2em] font-bold uppercase block mb-4 text-sm">India's Premier Coaching Institute</span>
-                    <h1 class="text-5xl md:text-7xl font-bold text-white font-headline leading-[1.1] mb-8">
-                        Shape Your Future <br/> with <span class="text-orange-300">Sharma Classes</span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-blue-200 max-w-2xl mb-10 leading-relaxed">
-                        Expert guidance and proven results for your academic success. Join thousands of students who have cracked competitive exams.
-                    </p>
+    <header class="relative bg-surface-container-low pt-20 pb-32 overflow-hidden border-b border-outline-variant/10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-3/5 z-10">
+                <span class="inline-block label-sm tracking-[0.15em] text-red-600 font-bold uppercase mb-6">Redefining Academic Excellence</span>
+                <h1 class="text-[3.5rem] leading-[1.1] font-extrabold tracking-tight text-primary mb-8">
+                    Shape Your Future with <br/> <span class="text-red-600">Expert Guidance</span>
+                </h1>
+                <p class="text-lg leading-relaxed text-on-surface-variant max-w-xl mb-12">
+                    A tradition of discipline, a legacy of results. We provide the intellectual architecture for students to excel in competitive examinations through curated mentorship.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#courses" class="bg-primary text-white px-10 py-4 rounded-md font-bold text-sm uppercase tracking-widest transition-all hover:bg-blue-900 inline-block shadow-lg">
+                        Explore Courses
+                    </a>
+                    <a href="#contact" class="border-2 border-red-600 text-red-600 px-10 py-4 rounded-md font-bold text-sm uppercase tracking-widest transition-all hover:bg-red-50 inline-block">
+                        Contact Us
+                    </a>
                 </div>
             </div>
-        </section>
-
-        <section class="py-20 bg-[#f3f4f5]" id="courses">
-            <div class="max-w-7xl mx-auto px-6 md:px-12">
-                <div class="mb-16 text-center md:text-left">
-                    <span class="text-secondary tracking-[0.2em] font-bold uppercase text-sm">Our Curriculum</span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-primary mt-4 font-headline">Featured Academic Programs</h2>
+            <div class="lg:w-2/5 relative">
+                <div class="aspect-[4/5] bg-white rounded-xl overflow-hidden shadow-2xl relative border-4 border-white">
+                    <img alt="Sharma Classes" class="w-full h-full object-cover grayscale-[10%] contrast-[1.1]" src="{% static 'images/hero_section.png' %}"/>
                 </div>
+                <div class="border border-outline-variant/30 absolute -bottom-10 -left-10 bg-white p-10 shadow-xl hidden md:block z-20 border-t-4 border-t-red-600">
+                    <span class="block text-5xl font-extrabold text-primary mb-2 tracking-tighter">98%</span>
+                    <span class="block text-[10px] font-black uppercase tracking-[0.2em] text-red-600">Success Rate</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="courses" class="bg-white py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <span class="label-sm tracking-widest text-red-600 uppercase font-bold text-xs">Scholastic Catalog</span>
+                    <h2 class="text-4xl font-bold tracking-tight text-primary mt-2">Our Programs</h2>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for course in courses %}
+                <div class="bg-surface-container-low p-10 group transition-all duration-300 hover:-translate-y-1 shadow-sm border-2 border-transparent hover:border-red-600 rounded-xl">
+                    <span class="text-xs font-bold uppercase tracking-widest text-primary mb-8 block opacity-80">Academic Program</span>
+                    <h3 class="text-2xl font-bold mb-4 text-primary">{{ course.course_name }}</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-8">{{ course.description }}</p>
+                    <div class="flex items-center justify-between mt-auto pt-8 border-t border-gray-200">
+                        <span class="text-primary font-extrabold text-lg">₹ {{ course.fee }}</span>
+                        <a class="flex items-center text-red-600 font-bold text-xs uppercase tracking-widest group-hover:gap-2 transition-all" href="#contact">
+                            Enquire <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                {% empty %}
+                    <p class="text-on-surface-variant col-span-3 py-10">Programs are currently being updated.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="flex flex-col items-center justify-center bg-surface-container-low py-24 overflow-hidden border-y-2 border-primary">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="label-sm tracking-[0.2em] text-red-600 uppercase font-bold text-xs">Visual Legacy</span>
+                <h2 class="text-4xl font-bold tracking-tight text-primary mt-4">Success & Moments</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center mx-auto">
+    
+            {% for item in gallery_images %}
+            <div class="relative group overflow-hidden bg-white rounded-xl shadow-md h-[320px] w-full max-w-[380px] flex items-center justify-center border-2 border-gray-200 hover:border-primary transition-colors">
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {% for course in courses %}
-                    <div class="bg-white rounded-xl p-8 editorial-shadow group transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
-                        <div class="flex justify-between items-start mb-8">
-                            <span class="p-3 bg-blue-50 text-primary rounded-lg">
-                                <span class="material-symbols-outlined text-3xl">auto_stories</span>
-                            </span>
-                            <span class="text-sm font-bold text-secondary">Open Batch</span>
+                {% if item.image %}
+                <img class="max-w-full max-h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105" alt="{{ item.title }}" src="{{ item.image.url }}"/>
+                {% endif %}
+                
+                <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-[#00164e]/95 via-primary/70 to-transparent w-full text-left">
+                    <span class="bg-red-600 px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider rounded-sm shadow-sm">{{ item.category }}</span>
+                    <h4 class="text-white text-lg mt-2 font-bold">{{ item.title }}</h4>
+                </div>
+            </div>
+            {% empty %}
+            <p class="text-on-surface-variant col-span-full text-center py-10">No visual legacy records found.</p>
+            {% endfor %}
+    
+        </div>
+    </div>
+    </section>
+
+    <section id="faculty" class="bg-white py-24">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+            <span class="label-sm tracking-widest text-red-600 uppercase font-bold text-xs">The Intellectual Core</span>
+            <h2 class="text-4xl font-bold tracking-tight text-primary mt-4">Meet Our Experts</h2>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {% for teacher in faculties %}
+            <div class="bg-surface-container-low p-8 rounded-xl shadow-sm text-center transition-all duration-300 border-2 border-transparent hover:border-primary">
+                <div class="w-28 h-28 rounded-full mx-auto mb-6 bg-white overflow-hidden border-4 border-red-100 p-1 shadow-inner">
+                    {% if teacher.image %}
+                        <img alt="{{ teacher.name }}" class="w-full h-full object-cover rounded-full hover:scale-110 transition-all duration-500" src="{{ teacher.image.url }}"/>
+                    {% else %}
+                        <div class="w-full h-full flex items-center justify-center bg-gray-100 rounded-full">
+                            <span class="material-symbols-outlined text-4xl text-gray-400">person</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">{{ course.name }}</h3>
-                        <p class="text-gray-600 mb-10 leading-relaxed">
-                            {{ course.description }}
-                        </p>
-                        <div class="pt-6 ghost-border flex justify-between items-center">
+                    {% endif %}
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-1">{{ teacher.name }}</h3>
+                <p class="text-red-600 text-[10px] font-extrabold uppercase tracking-widest mb-4">{{ teacher.designation }} | {{ teacher.subject }}</p>
+                <div class="h-[2px] w-12 bg-red-600/30 mx-auto mb-4"></div>
+                <p class="text-slate-600 text-sm leading-relaxed line-clamp-3">{{ teacher.description }}</p>
+            </div>
+            {% empty %}
+                <p class="text-on-surface-variant col-span-4 text-center py-10">Faculty profiles are currently being updated.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="contact" class="bg-surface-container-low py-24 border-t-2 border-primary">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-20">
+                
+                <div class="lg:w-1/2">
+                    <span class="label-sm tracking-widest text-red-600 uppercase font-bold text-xs">Get In Touch</span>
+                    <h2 class="text-4xl font-bold tracking-tight text-primary mt-4 mb-8">Begin Your Journey</h2>
+                    <p class="text-slate-600 leading-relaxed mb-12">Visit our campus or drop an enquiry. Our academic counselors are available to guide you through the selection process and scholarship opportunities.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-red-600 bg-red-50 p-4 rounded-full shadow-sm">location_on</span>
                             <div>
-                                <p class="text-xs uppercase text-gray-500 font-bold tracking-widest mb-1">Fee Starts From</p>
-                                <p class="text-xl font-bold text-primary">{{ course.fee }}</p>
+                                <h4 class="font-bold text-primary mb-1">Main Campus</h4>
+                                <p class="text-slate-600 text-sm">4R83+4JV, Rojhari Main Rd, Naya Gaon, Rojdi, Rajasthan 324010</p>
                             </div>
                         </div>
-                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-secondary group-hover:w-full transition-all duration-500"></div>
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-red-600 bg-red-50 p-4 rounded-full shadow-sm">call</span>
+                            <div>
+                                <h4 class="font-bold text-primary mb-1">Direct Contact</h4>
+                                <p class="text-slate-600 text-sm">+91 99295 50407 / +91 97820 54083</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-red-600 bg-red-50 p-4 rounded-full shadow-sm">mail</span>
+                            <div>
+                                <h4 class="font-bold text-primary mb-1">Official Email</h4>
+                                <p class="text-slate-600 text-sm">admissions@sharmaclasses.edu</p>
+                            </div>
+                        </div>
                     </div>
-                    {% empty %}
-                        <p class="col-span-3 text-center text-gray-500 py-10">No courses available right now. Please check back later.</p>
-                    {% endfor %}
                 </div>
-            </div>
-        </section>
 
-        <section class="py-20 bg-[#f8f9fa] overflow-hidden" id="enquiry">
-            <div class="max-w-7xl mx-auto px-6 md:px-12">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <span class="text-secondary tracking-[0.2em] font-bold uppercase text-sm">Get In Touch</span>
-                        <h2 class="text-4xl md:text-5xl font-bold text-primary mt-4 mb-8 font-headline">Ready to Start Your Journey?</h2>
-                        <p class="text-lg text-gray-600 mb-12 leading-relaxed">
-                            Book a free counseling session. We'll help you identify your strengths and create a personalized learning roadmap.
-                        </p>
+                <div class="lg:w-1/2 bg-white p-10 md:p-14 rounded-2xl border-t-4 border-t-red-600 shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full pointer-events-none">
+                        <img class="absolute top-0 right-0 w-32 h-30 bg-primary/5 rounded-bl-full pointer-events-none" src = "static/images/logo.jpeg">
                     </div>
                     
-                    <div class="bg-[#f3f4f5] p-10 rounded-xl relative z-10 editorial-shadow">
-                        <form method="POST" action="" class="space-y-6">
-                            {% csrf_token %}
-                            <div>
-                                <label class="text-gray-700 font-semibold block mb-2 text-sm" for="name">Student Name</label>
-                                <input name="name" required class="w-full bg-white border-0 focus:ring-2 focus:ring-secondary px-4 py-4 rounded-lg" id="name" placeholder="Enter full name" type="text"/>
-                            </div>
-                            <div>
-                                <label class="text-gray-700 font-semibold block mb-2 text-sm" for="phone">Phone Number</label>
-                                <input name="phone" required class="w-full bg-white border-0 focus:ring-2 focus:ring-secondary px-4 py-4 rounded-lg" id="phone" placeholder="+91 XXXXX XXXXX" type="tel"/>
-                            </div>
-                            <div>
-                                <label class="text-gray-700 font-semibold block mb-2 text-sm" for="course">Course Interested In</label>
-                                <input name="course" required class="w-full bg-white border-0 focus:ring-2 focus:ring-secondary px-4 py-4 rounded-lg" id="course" placeholder="e.g., JEE, NEET, Class 10" type="text"/>
-                            </div>
-                            <button class="w-full bg-primary text-white py-5 rounded-lg font-bold text-lg hover:bg-primary-container transition-all shadow-lg mt-4" type="submit">
-                                Submit Enquiry
+                    <form method="POST" action="#contact" class="space-y-8 relative z-10">
+                        {% csrf_token %}
+                        
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-primary">Full Name *</label>
+                            <input name="student_name" required class="w-full bg-transparent border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-red-600 transition-all py-3 px-0 placeholder:text-gray-400 text-primary font-medium" placeholder="e.g. Rahul Mehta" type="text"/>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-primary">Phone Number *</label>
+                            <input name="phone_number" required pattern="[0-9]{10}" class="w-full bg-transparent border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-red-600 transition-all py-3 px-0 placeholder:text-gray-400 text-primary font-medium" placeholder="10-digit mobile number" type="tel"/>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-black uppercase tracking-widest text-primary">Interested Program *</label>
+                            <select name="interested_course" required class="w-full bg-transparent border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-red-600 transition-all py-3 px-0 text-primary font-medium cursor-pointer">
+                                <option value="" disabled selected>-- Select a Program --</option>
+                                {% for course in courses %}
+                                    <option value="{{ course.course_name }}">{{ course.course_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div class="pt-6">
+                            <button type="submit" class="w-full bg-red-600 text-white py-5 rounded-md font-bold text-sm uppercase tracking-[0.2em] shadow-lg shadow-red-600/30 hover:bg-red-700 hover:-translate-y-1 transition-all duration-300">
+                                Submit Official Enquiry
                             </button>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="bg-black w-full py-10 px-6 text-center text-gray-500">
-        <p>© 2026 Sharma Classes. Designed with <span class="text-orange-600">❤</span> for Future Leaders.</p>
+    <footer class="bg-primary w-full border-t-4 border-red-600 font-['Inter'] text-sm tracking-normal">
+        <div class="max-w-7xl mx-auto px-6 space-y-8 pt-16 pb-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-3xl font-bold text-white tracking-tight"><span class="text-red-500">SHARMA</span> CLASSES</div>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <a class="text-blue-200 font-bold hover:text-white transition-colors duration-200" href="#courses">Courses</a>
+                    <a class="text-blue-200 hover:text-white transition-colors duration-200" href="#faculty">Faculty</a>
+                    <a class="text-blue-200 hover:text-white transition-colors duration-200" href="#gallery">Gallery</a>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center border-t border-blue-800 pt-8 gap-4">
+                <p class="text-blue-300 text-[10px] font-bold uppercase tracking-widest">© {% now "Y" %} Sharma Classes. Built for Excellence in Kota.</p>
+                <div class="flex gap-6">
+                    <a href="https://maps.app.goo.gl/FkxgG8Cxztuz8vxA7" class="text-blue-300 hover:text-red-500 transition-colors"><span class="material-symbols-outlined">public</span></a>
+                    <a href="mailto:admissions@sharmaclasses.edu" class="text-blue-300 hover:text-red-500 transition-colors"><span class="material-symbols-outlined">mail</span></a>
+                </div>
+            </div>
+        </div>
     </footer>
 
 </body>

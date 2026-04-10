@@ -1,0 +1,24 @@
+<section id="gallery" class="bg-white py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="label-sm tracking-[0.2em] text-outline uppercase font-bold text-xs">Visual Legacy</span>
+                <h2 class="text-4xl font-bold tracking-tight text-on-background mt-4">Success & Moments</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[250px]">
+                {% for item in gallery_images %}
+                <div class="{% if forloop.counter == 1 %}md:col-span-2 md:row-span-2{% elif forloop.counter == 2 %}md:col-span-2{% endif %} relative group overflow-hidden bg-surface-container-low rounded-lg shadow-sm">
+                    {% if item.image %}
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="{{ item.title }}" src="{{ item.image.url }}"/>
+                    {% endif %}
+                    <div class="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent w-full">
+                        <span class="bg-primary px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider">{{ item.category }}</span>
+                        <h4 class="text-white {% if forloop.counter == 1 %}text-2xl mt-3{% else %}text-lg mt-2{% endif %} font-bold">{{ item.title }}</h4>
+                    </div>
+                </div>
+                {% empty %}
+                    <p class="text-on-surface-variant col-span-4 text-center py-10">No visual legacy records found.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
