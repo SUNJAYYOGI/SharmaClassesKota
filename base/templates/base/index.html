@@ -50,6 +50,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -137,70 +139,85 @@
     </div>
 
     <nav class="sticky top-0 w-full z-50 bg-white/90 backdrop-blur-xl shadow-sm font-['Inter'] font-medium tracking-tight border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tighter text-blue-900 flex items-center">
-                <img class="relative top-0 right-0 w-12 h-12 bg-primary/5 rounded-full pointer-events-none mr-3" src="{% static 'images/logo.jpeg' %}">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
+            <div class="text-xl md:text-2xl font-bold tracking-tighter text-blue-900 flex items-center">
+                <img class="relative top-0 right-0 w-10 h-9 md:w-17 md:h-15 bg-primary/5 rounded-full pointer-events-none mr-2 md:mr-3" src="{% static 'images/logo.jpeg' %}">
                 <span class="text-red-600">SHARMA </span><span class="text-primary ml-1">CLASSES</span>
             </div>
+            
             <div class="hidden md:flex items-center gap-10">
                 <a class="text-primary font-bold border-b-2 border-primary transition-colors duration-200" href="#courses">Courses</a>
                 <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="#faculty">Faculty</a>
                 <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="#gallery">Gallery</a>
                 <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="#contact">Contact</a>
             </div>
-            <a href="#contact" class="bg-red-600 text-white px-6 py-2.5 rounded-md font-bold text-sm tracking-wide hover:bg-red-700 active:scale-95 transition-all shadow-md inline-block">
-                Apply Now
-            </a>
+            
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden md:inline-block bg-red-600 text-white px-6 py-2.5 rounded-md font-bold text-sm tracking-wide hover:bg-red-700 active:scale-95 transition-all shadow-md">
+                    Apply Now
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-primary focus:outline-none">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-white border-b border-gray-200 shadow-lg px-6 py-4 flex flex-col gap-4 text-center">
+            <a class="text-primary font-bold" href="#courses" onclick="toggleMenu()">Courses</a>
+            <a class="text-slate-600 font-medium" href="#faculty" onclick="toggleMenu()">Faculty</a>
+            <a class="text-slate-600 font-medium" href="#gallery" onclick="toggleMenu()">Gallery</a>
+            <a class="text-slate-600 font-medium" href="#contact" onclick="toggleMenu()">Contact</a>
+            <a href="#contact" onclick="toggleMenu()" class="bg-red-600 text-white px-6 py-3 rounded-md font-bold text-sm shadow-md mt-2">Apply Now</a>
         </div>
     </nav>
 
-    <header class="relative bg-surface-container-low pt-20 pb-32 overflow-hidden border-b border-outline-variant/10">
+    <header class="relative bg-surface-container-low pt-16 pb-24 md:pt-20 md:pb-32 overflow-hidden border-b border-outline-variant/10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
-            <div class="lg:w-3/5 z-10">
-                <span class="inline-block label-sm tracking-[0.15em] text-red-600 font-bold uppercase mb-6">Redefining Academic Excellence</span>
-                <h1 class="text-[3.5rem] leading-[1.1] font-extrabold tracking-tight text-primary mb-8">
+            <div class="lg:w-3/5 z-10 text-center lg:text-left" data-aos="fade-right">
+                <span class="inline-block label-sm tracking-[0.15em] text-red-600 font-bold uppercase mb-4 md:mb-6">Redefining Academic Excellence</span>
+                <h1 class="text-4xl md:text-[3.5rem] leading-tight md:leading-[1.1] font-extrabold tracking-tight text-primary mb-6 md:mb-8">
                     Shape Your Future with <br/> <span class="text-red-600">Expert Guidance</span>
                 </h1>
-                <p class="text-lg leading-relaxed text-on-surface-variant max-w-xl mb-12">
+                <p class="text-base md:text-lg leading-relaxed text-on-surface-variant max-w-xl mx-auto lg:mx-0 mb-10 md:mb-12">
                     A tradition of discipline, a legacy of results. We provide the intellectual architecture for students to excel in competitive examinations through curated mentorship.
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#courses" class="bg-primary text-white px-10 py-4 rounded-md font-bold text-sm uppercase tracking-widest transition-all hover:bg-blue-900 inline-block shadow-lg">
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                    <a href="#courses" class="bg-primary text-white px-8 md:px-10 py-4 rounded-md font-bold text-sm uppercase tracking-widest transition-all hover:bg-blue-900 inline-block shadow-lg">
                         Explore Courses
                     </a>
-                    <a href="#contact" class="border-2 border-red-600 text-red-600 px-10 py-4 rounded-md font-bold text-sm uppercase tracking-widest transition-all hover:bg-red-50 inline-block">
+                    <a href="#contact" class="border-2 border-red-600 text-red-600 px-8 md:px-10 py-4 rounded-md font-bold text-sm uppercase tracking-widest transition-all hover:bg-red-50 inline-block">
                         Contact Us
                     </a>
                 </div>
             </div>
-            <div class="lg:w-2/5 relative">
+            <div class="lg:w-2/5 relative w-full" data-aos="fade-left">
                 <div class="aspect-[4/5] bg-white rounded-xl overflow-hidden shadow-2xl relative border-4 border-white">
                     <img alt="Sharma Classes" class="w-full h-full object-cover grayscale-[10%] contrast-[1.1]" src="{% static 'images/hero_section.png' %}"/>
                 </div>
-                <div class="border border-outline-variant/30 absolute -bottom-10 -left-10 bg-white p-10 shadow-xl hidden md:block z-20 border-t-4 border-t-red-600">
-                    <span class="block text-5xl font-extrabold text-primary mb-2 tracking-tighter">98%</span>
+                <div class="border border-outline-variant/30 absolute -bottom-6 -left-6 md:-bottom-10 md:-left-10 bg-white p-6 md:p-10 shadow-xl hidden sm:block z-20 border-t-4 border-t-red-600">
+                    <span class="block text-4xl md:text-5xl font-extrabold text-primary mb-2 tracking-tighter">98%</span>
                     <span class="block text-[10px] font-black uppercase tracking-[0.2em] text-red-600">Success Rate</span>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="courses" class="bg-white py-24">
+    <section id="courses" class="bg-white py-20 md:py-24">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-end mb-16">
-                <div>
+            <div class="flex justify-between items-end mb-12 md:mb-16 text-center md:text-left" data-aos="fade-up">
+                <div class="w-full">
                     <span class="label-sm tracking-widest text-red-600 uppercase font-bold text-xs">Scholastic Catalog</span>
-                    <h2 class="text-4xl font-bold tracking-tight text-primary mt-2">Our Programs</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-primary mt-2">Our Programs</h2>
                 </div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {% for course in courses %}
-                <div class="bg-surface-container-low p-10 group transition-all duration-300 hover:-translate-y-1 shadow-sm border-2 border-transparent hover:border-red-600 rounded-xl">
-                    <span class="text-xs font-bold uppercase tracking-widest text-primary mb-8 block opacity-80">Academic Program</span>
-                    <h3 class="text-2xl font-bold mb-4 text-primary">{{ course.course_name }}</h3>
-                    <p class="text-on-surface-variant text-sm leading-relaxed mb-8">{{ course.description }}</p>
-                    <div class="flex items-center justify-between mt-auto pt-8 border-t border-gray-200">
+                <div class="bg-surface-container-low p-8 md:p-10 group transition-all duration-300 hover:-translate-y-1 shadow-sm border-2 border-transparent hover:border-red-600 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                    <span class="text-xs font-bold uppercase tracking-widest text-primary mb-6 md:mb-8 block opacity-80">Academic Program</span>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4 text-primary">{{ course.course_name }}</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-6 md:mb-8">{{ course.description }}</p>
+                    <div class="flex items-center justify-between mt-auto pt-6 md:pt-8 border-t border-gray-200">
                         <span class="text-primary font-extrabold text-lg">₹ {{ course.fee }}</span>
                         <a class="flex items-center text-red-600 font-bold text-xs uppercase tracking-widest group-hover:gap-2 transition-all" href="#contact">
                             Enquire <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
@@ -214,25 +231,25 @@
         </div>
     </section>
 
-    <section id="gallery" class="flex flex-col items-center justify-center bg-surface-container-low py-24 overflow-hidden border-y-2 border-primary">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
+    <section id="gallery" class="flex flex-col items-center justify-center bg-surface-container-low py-20 md:py-24 overflow-hidden border-y-2 border-primary">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+            <div class="text-center mb-12 md:mb-20" data-aos="zoom-in">
                 <span class="label-sm tracking-[0.2em] text-red-600 uppercase font-bold text-xs">Visual Legacy</span>
-                <h2 class="text-4xl font-bold tracking-tight text-primary mt-4">Success & Moments</h2>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-primary mt-4">Success & Moments</h2>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center mx-auto">
     
             {% for item in gallery_images %}
-            <div class="relative group overflow-hidden bg-white rounded-xl shadow-md h-[320px] w-full max-w-[380px] flex items-center justify-center border-2 border-gray-200 hover:border-primary transition-colors">
+            <div class="relative group overflow-hidden bg-white rounded-xl shadow-md h-[280px] md:h-[320px] w-full max-w-[380px] flex items-center justify-center border-2 border-gray-200 hover:border-primary transition-colors" data-aos="fade-up">
                 
                 {% if item.image %}
                 <img class="max-w-full max-h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105" alt="{{ item.title }}" src="{{ item.image.url }}"/>
                 {% endif %}
                 
-                <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-[#00164e]/95 via-primary/70 to-transparent w-full text-left">
+                <div class="absolute bottom-0 left-0 p-4 md:p-6 bg-gradient-to-t from-[#00164e]/95 via-primary/70 to-transparent w-full text-left">
                     <span class="bg-red-600 px-3 py-1 text-[10px] font-bold text-white uppercase tracking-wider rounded-sm shadow-sm">{{ item.category }}</span>
-                    <h4 class="text-white text-lg mt-2 font-bold">{{ item.title }}</h4>
+                    <h4 class="text-white text-base md:text-lg mt-2 font-bold">{{ item.title }}</h4>
                 </div>
             </div>
             {% empty %}
@@ -243,16 +260,16 @@
     </div>
     </section>
 
-    <section id="faculty" class="bg-white py-24">
-        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+    <section id="faculty" class="bg-white py-20 md:py-24">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-12 md:mb-16" data-aos="fade-up">
             <span class="label-sm tracking-widest text-red-600 uppercase font-bold text-xs">The Intellectual Core</span>
-            <h2 class="text-4xl font-bold tracking-tight text-primary mt-4">Meet Our Experts</h2>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-primary mt-4">Meet Our Experts</h2>
         </div>
         
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {% for teacher in faculties %}
-            <div class="bg-surface-container-low p-8 rounded-xl shadow-sm text-center transition-all duration-300 border-2 border-transparent hover:border-primary">
-                <div class="w-28 h-28 rounded-full mx-auto mb-6 bg-white overflow-hidden border-4 border-red-100 p-1 shadow-inner">
+            <div class="bg-surface-container-low p-6 md:p-8 rounded-xl shadow-sm text-center transition-all duration-300 border-2 border-transparent hover:border-primary" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-24 h-24 md:w-28 md:h-28 rounded-full mx-auto mb-4 md:mb-6 bg-white overflow-hidden border-4 border-red-100 p-1 shadow-inner">
                     {% if teacher.image %}
                         <img alt="{{ teacher.name }}" class="w-full h-full object-cover rounded-full hover:scale-110 transition-all duration-500" src="{{ teacher.image.url }}"/>
                     {% else %}
@@ -261,9 +278,9 @@
                         </div>
                     {% endif %}
                 </div>
-                <h3 class="text-xl font-bold text-primary mb-1">{{ teacher.name }}</h3>
-                <p class="text-red-600 text-[10px] font-extrabold uppercase tracking-widest mb-4">{{ teacher.designation }} | {{ teacher.subject }}</p>
-                <div class="h-[2px] w-12 bg-red-600/30 mx-auto mb-4"></div>
+                <h3 class="text-lg md:text-xl font-bold text-primary mb-1">{{ teacher.name }}</h3>
+                <p class="text-red-600 text-[10px] font-extrabold uppercase tracking-widest mb-3 md:mb-4">{{ teacher.designation }} | {{ teacher.subject }}</p>
+                <div class="h-[2px] w-12 bg-red-600/30 mx-auto mb-3 md:mb-4"></div>
                 <p class="text-slate-600 text-sm leading-relaxed line-clamp-3">{{ teacher.description }}</p>
             </div>
             {% empty %}
@@ -272,16 +289,16 @@
         </div>
     </section>
 
-    <section id="contact" class="bg-surface-container-low py-24 border-t-2 border-primary">
+    <section id="contact" class="bg-surface-container-low py-20 md:py-24 border-t-2 border-primary overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col lg:flex-row gap-20">
+            <div class="flex flex-col lg:flex-row gap-12 md:gap-20">
                 
-                <div class="lg:w-1/2">
+                <div class="lg:w-1/2 text-center md:text-left" data-aos="fade-right">
                     <span class="label-sm tracking-widest text-red-600 uppercase font-bold text-xs">Get In Touch</span>
-                    <h2 class="text-4xl font-bold tracking-tight text-primary mt-4 mb-8">Begin Your Journey</h2>
-                    <p class="text-slate-600 leading-relaxed mb-12">Visit our campus or drop an enquiry. Our academic counselors are available to guide you through the selection process and scholarship opportunities.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-primary mt-4 mb-6 md:mb-8">Begin Your Journey</h2>
+                    <p class="text-slate-600 leading-relaxed mb-10 md:mb-12 max-w-lg mx-auto md:mx-0">Visit our campus or drop an enquiry. Our academic counselors are available to guide you through the selection process and scholarship opportunities.</p>
                     
-                    <div class="space-y-8">
+                    <div class="space-y-6 md:space-y-8 text-left max-w-md mx-auto md:mx-0">
                         <div class="flex items-start gap-4">
                             <span class="material-symbols-outlined text-red-600 bg-red-50 p-4 rounded-full shadow-sm">location_on</span>
                             <div>
@@ -306,12 +323,12 @@
                     </div>
                 </div>
 
-                <div class="lg:w-1/2 bg-white p-10 md:p-14 rounded-2xl border-t-4 border-t-red-600 shadow-xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full pointer-events-none">
-                        <img class="absolute top-0 right-0 w-32 h-30 bg-primary/5 rounded-bl-full pointer-events-none" src = "static/images/logo.jpeg">
+                <div class="lg:w-1/2 bg-white p-8 md:p-14 rounded-2xl border-t-4 border-t-red-600 shadow-xl relative overflow-hidden w-full" data-aos="fade-left">
+                    <div class="absolute top-0 right-0 w-20 h-20 md:w-32 md:h-32 bg-primary/5 rounded-bl-full z-0">
+                        <img class="absolute top-0 right-0 w-20 h-19 md:w-32 md:h-28 bg-primary/5 rounded-bl-full" src="{% static 'images/logo.jpeg' %}">
                     </div>
                     
-                    <form method="POST" action="#contact" class="space-y-8 relative z-10">
+                    <form method="POST" action="#contact" class="space-y-6 md:space-y-8 relative z-10">
                         {% csrf_token %}
                         
                         <div class="space-y-2">
@@ -334,8 +351,8 @@
                             </select>
                         </div>
                         
-                        <div class="pt-6">
-                            <button type="submit" class="w-full bg-red-600 text-white py-5 rounded-md font-bold text-sm uppercase tracking-[0.2em] shadow-lg shadow-red-600/30 hover:bg-red-700 hover:-translate-y-1 transition-all duration-300">
+                        <div class="pt-4 md:pt-6">
+                            <button type="submit" class="w-full bg-red-600 text-white py-4 md:py-5 rounded-md font-bold text-sm uppercase tracking-[0.2em] shadow-lg shadow-red-600/30 hover:bg-red-700 hover:-translate-y-1 transition-all duration-300">
                                 Submit Official Enquiry
                             </button>
                         </div>
@@ -345,19 +362,19 @@
         </div>
     </section>
 
-    <footer class="bg-primary w-full border-t-4 border-red-600 font-['Inter'] text-sm tracking-normal">
-        <div class="max-w-7xl mx-auto px-6 space-y-8 pt-16 pb-8">
+    <footer class="bg-primary w-full border-t-4 border-red-600 font-['Inter'] text-sm tracking-normal text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-6 space-y-8 pt-12 md:pt-16 pb-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="text-3xl font-bold text-white tracking-tight"><span class="text-red-500">SHARMA</span> CLASSES</div>
-                <div class="flex flex-wrap justify-center gap-8">
+                <div class="text-2xl md:text-3xl font-bold text-white tracking-tight"><span class="text-red-500">SHARMA</span> CLASSES</div>
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8">
                     <a class="text-blue-200 font-bold hover:text-white transition-colors duration-200" href="#courses">Courses</a>
                     <a class="text-blue-200 hover:text-white transition-colors duration-200" href="#faculty">Faculty</a>
                     <a class="text-blue-200 hover:text-white transition-colors duration-200" href="#gallery">Gallery</a>
                 </div>
             </div>
             
-            <div class="flex flex-col md:flex-row justify-between items-center border-t border-blue-800 pt-8 gap-4">
-                <p class="text-blue-300 text-[10px] font-bold uppercase tracking-widest">© {% now "Y" %} Sharma Classes. Built for Excellence in Kota.</p>
+            <div class="flex flex-col-reverse md:flex-row justify-between items-center border-t border-blue-800 pt-6 md:pt-8 gap-4">
+                <p class="text-blue-300 text-[9px] md:text-[10px] font-bold uppercase tracking-widest mt-2 md:mt-0">© {% now "Y" %} Sharma Classes. Built for Excellence in Kota.</p>
                 <div class="flex gap-6">
                     <a href="https://maps.app.goo.gl/FkxgG8Cxztuz8vxA7" class="text-blue-300 hover:text-red-500 transition-colors"><span class="material-symbols-outlined">public</span></a>
                     <a href="mailto:admissions@sharmaclasses.edu" class="text-blue-300 hover:text-red-500 transition-colors"><span class="material-symbols-outlined">mail</span></a>
@@ -365,6 +382,29 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        function toggleMenu() {
+            menu.classList.add('hidden');
+        }
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1500, // Animation ki timing
+            once: true,    // Sirf ek baar animate hoga
+            offset: 50,    // Element frame mein aane par shuru hoga
+        });
+    </script>
 
 </body>
 </html>

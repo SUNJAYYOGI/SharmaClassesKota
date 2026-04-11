@@ -1,0 +1,147 @@
+/* --- CSS Variables for Theme --- */
+:root {
+    --primary-blue: #0A2540;
+    --accent-orange: #FF6B00;
+    --bg-light: #F4F7F9;
+    --text-dark: #333;
+    --white: #FFFFFF;
+}
+
+/* --- Global Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: var(--primary-blue);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-orange);
+}
+
+/* --- Dynamic Notice Board --- */
+.notice-board {
+    background-color: var(--accent-orange);
+    color: var(--white);
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* --- Main Content Container --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-blue);
+}
+
+/* --- Course Cards (Grid Layout) --- */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.course-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--primary-blue);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-top: 4px solid var(--accent-orange);
+}
+
+.course-card h3 {
+    color: var(--accent-orange);
+    margin-bottom: 10px;
+}
+
+.course-card .fee {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: var(--bg-light);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* --- Enquiry Form --- */
+.contact-section {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.contact-section input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-section button {
+    padding: 12px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-section button:hover {
+    background-color: var(--accent-orange);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--primary-blue);
+    color: var(--white);
+    margin-top: 50px;
+}

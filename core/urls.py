@@ -4,6 +4,8 @@ from django.urls import path, include
 # Ye dono imports add karna bohot zaroori hai
 from django.conf import settings             
 from django.conf.urls.static import static   
+from django.views.static import serve
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
