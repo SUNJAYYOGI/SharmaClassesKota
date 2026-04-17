@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage', # YE NAYA HAI
     'django.contrib.staticfiles',
+    'cloudinary',
     'base',
     'django_cleanup.apps.CleanupConfig'
 ]
@@ -120,6 +122,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # Aage slash lagana zaroori hai
 STATIC_URL = '/static/'
 
@@ -132,3 +136,21 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dqyp1mkj9',
+    'API_KEY': '711874543445913',
+    'API_SECRET': 'VNZZdF14-kwzPUvcgGT-unf0jro'
+}
+
+# 2. Ye code Cloudinary ko Active karta hai (Django 4.2+ ke liye)
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage", 
+    },
+}
