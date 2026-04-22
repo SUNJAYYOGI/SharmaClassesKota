@@ -1,3 +1,4 @@
+import re
 from django.db import models
 
 class Course(models.Model):
@@ -58,3 +59,28 @@ class Enquiry(models.Model):
 
     def __str__(self):
         return f"{self.student_name} - {self.interested_course}"
+    
+class Video(models.Model):
+    video_url = models.URLField(max_length=500)
+    video_title = models.CharField(max_length=70)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    
+    class Meta:
+        verbose_name_plural = "Videos"
+        ordering = ['-created_at']
+        
+    def __str__(self):
+        return self.video_title
+    
+    def save(self, *args, **kwargs):
+        # YouTube URL se Video ID nikalne ka pattern
+        # Yeh pattern normal link, youtu.be link aur embed link teeno pe kaam karega
+        regex_pattern = r'(?:v=|\/)([0-9A-Za-z_-]{11})'
+        match = re.search(regex_pattern, self.video_url)
+        
+        if match:
+            video_id = match.group(1) # Asli 11 digit ki ID nikal li
+            # Ab URL ko saaf-suthre embed format mein replace kar diya
+            self.video_url = f"https://www.youtube.com/embed/{video_id}"
+            
+        super(Video, self).save(*args, **kwargs)

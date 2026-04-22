@@ -148,7 +148,8 @@
             <div class="hidden md:flex items-center gap-10">
                 <a class="text-primary font-bold border-b-2 border-primary transition-colors duration-200" href="#courses">Courses</a>
                 <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="#faculty">Faculty</a>
-                <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="#gallery">Gallery</a>
+                <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="#gallery">Photo Gallery</a>
+                <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="{% url 'gallery' %}">Video Gallery</a>
                 <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="#contact">Contact</a>
             </div>
             
@@ -165,7 +166,8 @@
         <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-white border-b border-gray-200 shadow-lg px-6 py-4 flex flex-col gap-4 text-center">
             <a class="text-primary font-bold" href="#courses" onclick="toggleMenu()">Courses</a>
             <a class="text-slate-600 font-medium" href="#faculty" onclick="toggleMenu()">Faculty</a>
-            <a class="text-slate-600 font-medium" href="#gallery" onclick="toggleMenu()">Gallery</a>
+            <a class="text-slate-600 font-medium" href="#gallery" onclick="toggleMenu()">Photo Gallery</a>
+            <a class="text-slate-600 font-medium" href="{% url 'gallery' %}" onclick="toggleMenu()">Video Gallery</a>
             <a class="text-slate-600 font-medium" href="#contact" onclick="toggleMenu()">Contact</a>
             <a href="#contact" onclick="toggleMenu()" class="bg-red-600 text-white px-6 py-3 rounded-md font-bold text-sm shadow-md mt-2">Apply Now</a>
         </div>
@@ -369,7 +371,7 @@
                 <div class="flex flex-wrap justify-center gap-6 md:gap-8">
                     <a class="text-blue-200 font-bold hover:text-white transition-colors duration-200" href="#courses">Courses</a>
                     <a class="text-blue-200 hover:text-white transition-colors duration-200" href="#faculty">Faculty</a>
-                    <a class="text-blue-200 hover:text-white transition-colors duration-200" href="#gallery">Gallery</a>
+                    <a class="text-blue-200 hover:text-white transition-colors duration-200" href="{% url 'gallery' %}">Video Gallery</a>
                 </div>
             </div>
             

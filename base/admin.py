@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Course, Notice, Enquiry, Gallery, Faculty
+from .models import Course, Notice, Enquiry, Gallery, Faculty, Video
 
 admin.site.register(Notice)
 
@@ -25,3 +25,8 @@ class GalleryAdmin(admin.ModelAdmin):
 class FacultyAdmin(admin.ModelAdmin):
     list_display = ('name','designation','subject','image')
     search_fields = ('name','designation','subject')
+    
+@admin.register(Video)
+class VideosAdmin(admin.ModelAdmin):
+    list_display = ('video_title', 'video_url')
+    search_fields = ('video_title',)

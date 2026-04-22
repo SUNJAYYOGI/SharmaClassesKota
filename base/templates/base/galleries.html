@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Video Gallery | Sharma Classes, Kota</title>
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#00236f", 
+                        "secondary": "#dc2626", 
+                        "surface-container-low": "#f4f6fb", 
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                    },
+                    "animation": {
+                        "marquee": "marquee 25s linear infinite",
+                    },
+                    "keyframes": {
+                        "marquee": {
+                            "0%": { transform: "translateX(100%)" },
+                            "100%": { transform: "translateX(-100%)" }
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #191c1d; overflow-x: hidden; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-white">
+
+    <div class="bg-red-600 py-2 overflow-hidden whitespace-nowrap border-b border-red-700 shadow-md">
+        <div class="flex items-center gap-8 animate-marquee text-white">
+            <span class="flex items-center text-red-600 bg-white px-3 py-1 rounded-sm text-[11px] font-bold tracking-widest uppercase">
+                <span class="material-symbols-outlined text-[14px] mr-2">campaign</span>
+                Latest Update
+            </span>
+            {% for notice in notices %}
+                <p class="text-white text-xs font-medium">{{ notice.title }} ({{ notice.date_posted|date:"d M Y" }})</p>
+                <span class="text-red-300">|</span>
+            {% empty %}
+                <p class="text-white text-xs font-medium">Welcome to Sharma Classes! Admissions are now open.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <nav class="sticky top-0 w-full z-50 bg-white/90 backdrop-blur-xl shadow-sm font-['Inter'] font-medium tracking-tight border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
+            <a href="/" class="text-2xl font-bold tracking-tighter text-blue-900 flex items-center">
+                <img class="relative top-0 right-0 w-10 h-9 md:w-17 md:h-15 bg-primary/5 rounded-full pointer-events-none mr-2 md:mr-3" src="{% static 'images/logo.jpeg' %}">
+                <span class="text-red-600">SHARMA </span><span class="text-primary ml-1">CLASSES</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="/#courses">Courses</a>
+                <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="/#faculty">Faculty</a>
+                <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="/#gallery">Photo Gallery</a>
+                <a class="text-primary font-bold border-b-2 border-primary transition-colors duration-200" href="#">Video Gallery</a>
+                <a class="text-slate-600 hover:text-red-600 transition-colors duration-200" href="/#contact">Contact</a>
+                <a href="/#contact" class="bg-red-600 text-white px-6 py-2.5 rounded-md font-bold text-sm tracking-wide hover:bg-red-700 active:scale-95 transition-all shadow-md inline-block">
+                    Apply Now
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-primary focus:outline-none">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute w-full bg-white border-b border-gray-200 shadow-lg px-6 py-4 flex flex-col gap-4 text-center">
+            <a class="text-slate-600 font-medium" href="/#courses" onclick="toggleMenu()">Courses</a>
+            <a class="text-slate-600 font-medium" href="/#faculty" onclick="toggleMenu()">Faculty</a>
+            <a class="text-slate-600 font-medium" href="/#gallery" onclick="toggleMenu()">Photo Gallery</a>
+            <a class="text-primary font-bold" href="#" onclick="toggleMenu()">Video Gallery</a>
+            <a class="text-slate-600 font-medium" href="/#contact" onclick="toggleMenu()">Contact</a>
+            <a href="/#contact" onclick="toggleMenu()" class="bg-red-600 text-white px-6 py-3 rounded-md font-bold text-sm shadow-md mt-2">
+                Apply Now
+            </a>
+        </div>
+    </nav>
+
+    <section class="bg-surface-container-low py-16 md:py-24 min-h-[70vh]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16" data-aos="zoom-in">
+                <span class="label-sm tracking-widest text-red-600 uppercase font-bold text-xs">Digital Content</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-primary mt-4">
+                    Welcome to <span class="text-red-600">SHARMA</span> CLASSES
+                </h1>
+                <p class="text-slate-600 mt-4 max-w-2xl mx-auto">Watch our latest lectures, student reviews, and campus highlights.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for video in gallery_videos %}
+                <div class="bg-white rounded-xl overflow-hidden shadow-md border-2 border-transparent hover:border-red-600 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="aspect-video w-full relative bg-gray-100">
+                        <iframe 
+                            class="absolute top-0 left-0 w-full h-full"
+                            src="{{ video.video_url }}" 
+                            title="{{ video.video_title }}" 
+                            frameborder="0" 
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="p-5 border-t border-gray-100">
+                        <h3 class="font-bold text-primary text-lg line-clamp-2 group-hover:text-red-600 transition-colors">{{ video.video_title }}</h3>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col-span-full text-center py-20" data-aos="fade-up">
+                    <span class="material-symbols-outlined text-6xl text-gray-300 mb-4 block">videocam_off</span>
+                    <h3 class="text-2xl font-bold text-primary mb-2">No Videos Available</h3>
+                    <p class="text-slate-600">We are currently updating our video gallery. Please check back soon!</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary w-full border-t-4 border-red-600 font-['Inter'] text-sm tracking-normal text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-6 space-y-8 pt-12 md:pt-16 pb-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-2xl md:text-3xl font-bold text-white tracking-tight"><span class="text-red-500">SHARMA</span> CLASSES</div>
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                    <a class="text-blue-200 hover:text-white transition-colors duration-200 text-sm md:text-base" href="/#courses">Courses</a>
+                    <a class="text-blue-200 hover:text-white transition-colors duration-200 text-sm md:text-base" href="/#faculty">Faculty</a>
+                    <a class="text-white font-bold transition-colors duration-200 text-sm md:text-base" href="/#gallery">Photo Gallery</a>
+                </div>
+            </div>
+            
+            <div class="flex flex-col-reverse md:flex-row justify-between items-center border-t border-blue-800 pt-6 md:pt-8 gap-4">
+                <p class="text-blue-300 text-[9px] md:text-[10px] font-bold uppercase tracking-widest mt-2 md:mt-0">© {% now "Y" %} Sharma Classes. Built for Excellence in Kota.</p>
+                <div class="flex gap-6">
+                    <a href="https://maps.app.goo.gl/FkxgG8Cxztuz8vxA7" class="text-blue-300 hover:text-red-500 transition-colors"><span class="material-symbols-outlined">public</span></a>
+                    <a href="mailto:admissions@sharmaclasses.edu" class="text-blue-300 hover:text-red-500 transition-colors"><span class="material-symbols-outlined">mail</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        function toggleMenu() {
+            menu.classList.add('hidden');
+        }
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, 
+            once: true,    
+            offset: 50,    
+        });
+    </script>
+
+</body>
+</html>

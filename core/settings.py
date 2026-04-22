@@ -146,7 +146,7 @@ CLOUDINARY_STORAGE = {
 }
 
 # 2. Ye code Cloudinary ko Active karta hai (Django 4.2+ ke liye)
-# Cloudinary package ke Crash Bug ko fix karne ke liye ye line zaroori hai 
+# Cloudinary package ke Crash Bug ko fix karne ke liye ye line zaroori hai
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STORAGES = {
     "default": {

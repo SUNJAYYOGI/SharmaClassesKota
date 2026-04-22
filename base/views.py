@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Course, Notice, Enquiry, Gallery, Faculty
+from .models import Course, Notice, Enquiry, Gallery, Faculty, Video
 
 def home(request):
     if request.method == "POST":
@@ -33,3 +33,14 @@ def home(request):
     }
     
     return render(request, 'base/index.html', context)
+
+def gallery(request):
+    gallery_images = Gallery.objects.filter(is_visible=True).order_by('-date')
+    gallery_videos = Video.objects.all()
+    
+    context = {
+        'gallery_images': gallery_images,
+        'gallery_videos': gallery_videos,
+    }
+    
+    return render(request, 'base/galleries.html', context)
