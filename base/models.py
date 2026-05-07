@@ -15,7 +15,7 @@ class Course(models.Model):
         return self.course_name
         
 class Gallery(models.Model):
-    choices = (('Event','Event'),('Result_banner','Result_banner'),('Teacher Banner','Teacher Banner'),)
+    choices = (('Event','Event'),('Result banner','Result banner'),('Teacher Banner','Teacher Banner'),)
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='gallery/')
     category = models.CharField(choices=choices, max_length=50)
@@ -73,8 +73,6 @@ class Video(models.Model):
         return self.video_title
     
     def save(self, *args, **kwargs):
-        # YouTube URL se Video ID nikalne ka pattern
-        # Yeh pattern normal link, youtu.be link aur embed link teeno pe kaam karega
         regex_pattern = r'(?:v=|\/)([0-9A-Za-z_-]{11})'
         match = re.search(regex_pattern, self.video_url)
         
