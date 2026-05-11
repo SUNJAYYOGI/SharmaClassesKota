@@ -23,12 +23,14 @@ def home(request):
     courses = Course.objects.all()
     notices = Notice.objects.filter(is_active=True).order_by('-date_posted')
     gallery_images = Gallery.objects.filter(is_visible=True).order_by('-date')[:12]
+    gallery_videos = Video.objects.all().order_by('-created_at')[:12]
     faculties = Faculty.objects.all()
 
     context = {
         'courses': courses,
         'notices': notices,
         'gallery_images': gallery_images,
+        'gallery_videos': gallery_videos,
         'faculties': faculties,
     }
     
